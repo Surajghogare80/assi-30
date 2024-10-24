@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+            margin: auto;
+            padding: 0%;
+            background-color: paleturquoise;
+        }
+
+        .heading {
+            font-family: cursive;
+            font-size: 35px;
+            text-align: center;
+            border-bottom: 4px solid black;
+            padding: 15px;
+        }
+
+        .box {
+            background-color: white;
+            border: 4px solid black;
+            width: fit-content;
+            margin: 100px auto;
+            text-align: center;
+        }
+
+        .product {
+            margin: 0%;
+            padding: 0%;
+        }
+
+        .button {
+            margin: 10px;
+            color: rgb(0, 0, 0);
+            padding: 10px;
+            background-color: rgb(171, 193, 199);
+            border: 2px rgb(66, 131, 149) solid;
+            border-radius: 15px;
+            width: 40%;
+        }
+
+        .quantity {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .quantity-container {
+            margin: 0px 10px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+
+<body>
+    <h1 class="heading">
+        🛍️ Lootkart products
+    </h1>
+    <div class="box bg-green" id="card">
+        <img src="./iphone-removebg-preview.png" class="mob-img" height="350px">
+        <h2 class="product">iphone 16 (512GB)
+        </h2>
+        <div class="quantity">
+            <img src="./minus.png " height="30px" class="quantity-container" onclick="decrease()">
+            <span id="quantity">1</span>
+            <img src="./addition-button.png" height="30px" class="quantity-container" onclick="addition()">
+        </div>
+        <button type="button" class="button">
+            Buy now
+        </button>
+        <script>
+            const quantElement = document.getElementById('quantity')
+            function addition() {
+                let quantity = parseInt(quantElement.innerText);
+                quantElement.innerText = ++quantity;
+            }
+            function decrease() {
+                let quantity = parseInt(quantElement.innerText);
+                quantElement.innerText = --quantity;
+            }
+        </script>
+    </div>
+
+</html>
